@@ -9,6 +9,7 @@ class VideoDetail extends Component {
 
   render() {
     const { title, description, videoId } = this.props;
+    
     return (
       <React.Fragment>
         <div className="embed-responsive embed-responsive-16by9">

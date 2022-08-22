@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import VideoListItem from "./video-list-item";
 
 class VideoList extends Component {
   state = {};
   render() {
-    const { items } = this.props;
+    const { items, handleSelect} = this.props;
     return (
       <div className="">
         {items.map((item, index) => {
@@ -13,17 +14,13 @@ class VideoList extends Component {
           const videoId = item.id.videoId;
 
           return (
-            <div className="">
-              <li className="pb-2 d-flex dl list-feature" onClick={(event) => {
-                console.log(videoId);
-                this.handleSelect(title, description, videoId);
-              }}>
-                <div>
-                  <img width="180px" height="95px" src={imgUrl} className="mr-3" alt="" />
-                </div>
-                <div className="media-body ms-2"><span className="side-title-font">{title}</span></div>
-              </li>
-            </div>
+            <VideoListItem
+              imgUrl={imgUrl}
+              title={title}
+              description={description}
+              videoId={videoId}
+              handleSelect={handleSelect}
+            />
           );
         })}
       </div>
