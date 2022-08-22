@@ -4,7 +4,7 @@ import VideoListItem from "./video-list-item";
 class VideoList extends Component {
   state = {};
   render() {
-    const { items, handleSelect} = this.props;
+    const { items, handleSelect } = this.props;
     return (
       <div className="">
         {items.map((item, index) => {

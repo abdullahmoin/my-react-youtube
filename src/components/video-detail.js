@@ -1,19 +1,14 @@
 import React, { Component } from "react";
 
 class VideoDetail extends Component {
-  state = {
-
-  };
-
-
+  state = {};
 
   render() {
     const { title, description, videoId } = this.props;
-    
+
     return (
       <React.Fragment>
         <div className="embed-responsive embed-responsive-16by9">
-
           <iframe
             width="100%"
             height="700px"
@@ -24,7 +19,7 @@ class VideoDetail extends Component {
             allowFullScreen
           ></iframe>
 
-          <div className="details" style={{ marginTop: "10px", padding: "10px" }}>
+          <div className="details" style={{ marginTop: "10px" }}>
             <h4>{title}</h4>
             <p>{description}</p>
           </div>

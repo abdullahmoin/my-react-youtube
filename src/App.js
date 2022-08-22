@@ -15,15 +15,15 @@ class App extends Component {
       "I don't have any rights. Playboi, Carti, Playboi Carti, Magnolia, lofi remix, Playboi Carti Magnolia, remix, vhs, vhs cam, after effects, Carti, rap, american, american rap, trippie redd, love scars, 6ix9ine, Yung Bans, Fatboibari",
   };
 
-  handleChange = ({ target: { value: searchTerm } }) =>
-    this.setState({ ...this.state, searchTerm });
+  handleSubmit = (event) => {
+    event.preventDefault();
+    this.setState({ ...this.state, searchTerm: event.target.search.value });
+  };
 
   componentDidMount = () => {};
 
-  handleSelect = (title, description, videoId) => {
-    console.log("ami handle select");
+  handleSelect = (title, description, videoId) =>
     this.setState({ ...this.state, title, description, videoId });
-  };
 
   componentDidUpdate(prevProps, prevState) {
     const getYTVideos = () => {
@@ -49,7 +49,7 @@ class App extends Component {
   render() {
     return (
       <div className="container mt-5">
-        <SearchBar handleChange={this.handleChange} />
+        <SearchBar handleSubmit={this.handleSubmit} />
 
         <div className="row">
           <div className="col-md-8">
@@ -60,7 +60,10 @@ class App extends Component {
             />
           </div>
           <div className="col-md-4">
-            <VideoList items={this.state.data.items || []} handleSelect={this.handleSelect} />
+            <VideoList
+              items={this.state.data.items || []}
+              handleSelect={this.handleSelect}
+            />
           </div>
         </div>
       </div>

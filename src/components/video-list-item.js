@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class VideoListItem extends Component {
   state = {};
   render() {
-    const { imgUrl, title, description, videoId, handleSelect} = this.props;
+    const { imgUrl, title, description, videoId, handleSelect } = this.props;
 
     return (
       <div className="">
@@ -11,7 +11,7 @@ class VideoListItem extends Component {
           className="pb-2 d-flex dl list-feature"
           onClick={(event) => {
             console.log(videoId);
-           handleSelect(title, description, videoId);
+            handleSelect(title, description, videoId);
           }}
         >
           <div>
