@@ -10,7 +10,6 @@ class VideoListItem extends Component {
         <li
           className="pb-2 d-flex dl list-feature"
           onClick={(event) => {
-            console.log(videoId);
             handleSelect(title, description, videoId);
           }}
         >

@@ -10,7 +10,7 @@ class VideoList extends Component {
         {items.map((item, index) => {
           const imgUrl = item.snippet.thumbnails.high.url;
           const title = item.snippet.title;
-          const description = item.snippet.thumbnails.description;
+          const description = item.snippet.description;
           const videoId = item.id.videoId;
 
           return (

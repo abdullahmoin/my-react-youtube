@@ -11,6 +11,8 @@ class App extends Component {
     data: {},
     videoId: "voJuNEKcUXY",
     title: "Playboi Carti - Magnolia ( lofi remix )",
+    views: "1,022,846 views",
+    uplDate: "Feb 7, 2019",
     description:
       "I don't have any rights. Playboi, Carti, Playboi Carti, Magnolia, lofi remix, Playboi Carti Magnolia, remix, vhs, vhs cam, after effects, Carti, rap, american, american rap, trippie redd, love scars, 6ix9ine, Yung Bans, Fatboibari",
   };
@@ -37,16 +39,21 @@ class App extends Component {
 
       axios
         .get(Url)
-        .then((response) =>
+        .then((response) => {
           this.setState({ ...this.state, data: response.data })
+          
+        }
         )
         .catch((error) => console.error(error));
+        
     };
 
     if (prevState.searchTerm !== this.state.searchTerm) getYTVideos();
   }
 
   render() {
+    console.log(this.state.data);
+        console.log("moooooooo");
     return (
       <div className="container mt-5">
         <SearchBar handleSubmit={this.handleSubmit} />
@@ -57,6 +64,8 @@ class App extends Component {
               title={this.state.title}
               description={this.state.description}
               videoId={this.state.videoId}
+              views={this.state.views}
+              uplDate={this.state.uplDate}
             />
           </div>
           <div className="col-md-4">

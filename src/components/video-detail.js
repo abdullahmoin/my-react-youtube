@@ -4,7 +4,7 @@ class VideoDetail extends Component {
   state = {};
 
   render() {
-    const { title, description, videoId } = this.props;
+    const { title, description, videoId, views, uplDate } = this.props;
 
     return (
       <React.Fragment>
@@ -19,8 +19,9 @@ class VideoDetail extends Component {
             allowFullScreen
           ></iframe>
 
-          <div className="details" style={{ marginTop: "10px" }}>
-            <h4>{title}</h4>
+          <div className="details " style={{ marginTop: "10px" }}>
+            <h6 className="main-title">{title}</h6>
+            <p>{views}<span> •{uplDate}</span></p>
             <p>{description}</p>
           </div>
         </div>
