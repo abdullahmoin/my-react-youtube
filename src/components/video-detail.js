@@ -20,8 +20,27 @@ class VideoDetail extends Component {
           ></iframe>
 
           <div className="details " style={{ marginTop: "10px" }}>
-            <h6 className="main-title">{title}</h6>
-            <p>{views}<span> •{uplDate}</span></p>
+            <div className="row">
+              <div className="col-md-7">
+                <h6 className="main-title">{title}</h6>
+                <p>
+                  {views} <span> •{uplDate}</span>
+                </p>
+              </div>
+              <div className="col-md-1"></div>
+              <div className="col-md-4 d-flex justify-content-end align-items-start">
+                <button className="reaction me-3">
+                  <i title="I like this" class="ri-thumb-down-line"></i>
+                </button>
+                <button className="reaction me-3">
+                  <i title="I dislike this" class="ri-thumb-up-line"></i>
+                </button>
+                <button className="reaction">
+                  <i title="Share" class="ri-share-forward-line"></i>
+                </button>
+              </div>
+            </div>
+            <hr />
             <p>{description}</p>
           </div>
         </div>

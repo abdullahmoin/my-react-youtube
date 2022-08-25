@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class VideoListItem extends Component {
   state = {};
   render() {
-    const { imgUrl, title, description, videoId, handleSelect } = this.props;
+    const { imgUrl, title, description, videoId, channelTitle, handleSelect } = this.props;
 
     return (
       <div className="">
@@ -24,6 +24,7 @@ class VideoListItem extends Component {
           </div>
           <div className="media-body ms-2">
             <span className="side-title-font">{title}</span>
+            <span className="side-channelTitle">{channelTitle}</span>
           </div>
         </li>
       </div>

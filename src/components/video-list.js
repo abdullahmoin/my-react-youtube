@@ -12,15 +12,19 @@ class VideoList extends Component {
           const title = item.snippet.title;
           const description = item.snippet.description;
           const videoId = item.id.videoId;
+          const channelTitle = item.snippet.channelTitle;
 
           return (
-            <VideoListItem
+            <div key={index}>
+              <VideoListItem
               imgUrl={imgUrl}
               title={title}
               description={description}
               videoId={videoId}
+              channelTitle={channelTitle}
               handleSelect={handleSelect}
             />
+            </div>
           );
         })}
       </div>
